@@ -25,16 +25,18 @@ while(True):
 		#flags = cv2.CV_HAAR_SCALE_IMAGE
 	)
 
-	print("Found {0} faces!".format(len(faces)))
+	print("yes yes yes !!!!! Found {0} faces!".format(len(faces)))
 
 	# Draw a rectangle around the faces
 	for (x, y, w, h) in faces:
 		cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+		print("!!!!!!!!!!!!!rect!!!!!!!!!!!")
 
 
-	# Display the resulting frame
-	cv2.imwrite('frame{0}.jpg'.format(counter), frame)
-	counter += 1
+		# Display the resulting frame
+		cv2.imwrite('frame{0}.jpg'.format(counter), frame)
+		counter += 1
+
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break
 

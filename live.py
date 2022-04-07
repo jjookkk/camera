@@ -8,6 +8,7 @@ cap = cv2.VideoCapture(0)
 # Create the haar cascade
 faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
+counter = 0
 while(True):
 	# Capture frame-by-frame
 	ret, frame = cap.read()
@@ -32,7 +33,8 @@ while(True):
 
 
 	# Display the resulting frame
-	cv2.imshow('frame', frame)
+	cv2.imwrite('frame{0}.jpg'.format(counter), frame)
+	counter += 1
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break
 

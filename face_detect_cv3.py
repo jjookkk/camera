@@ -26,15 +26,15 @@ faces = faceCascade.detectMultiScale(
 
 print("yes! found {0} faces!\n happy happy happy".format(len(faces)))
 
-# Draw a rectangle around the faces
-for (x, y, w, h) in faces:
-    cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
-    print("draw a rectangle hahah")
-
 if os.system("rm -rf detected.jpg"):
     print("erase origin jpg")
 else: 
     print("failed")
+
+# Draw a rectangle around the faces
+for (x, y, w, h) in faces:
+    cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+    print("draw a rectangle hahah")
 
 cv2.imwrite("detected.jpg", image)
 cv2.waitKey(0)
